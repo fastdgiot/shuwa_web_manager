@@ -1,0 +1,13 @@
+{application,shuwa_web_manager,
+             [{description,[25968,34521,104,116,116,112,26381,21153]},
+              {vsn,"4.0.0"},
+              {applications,[kernel,stdlib,shuwa_parse]},
+              {modules,[check_args,http_channel,parse_trigger,shuwa_api_hub,
+                        shuwa_auth,shuwa_edashboard,shuwa_http_server,
+                        shuwa_install,shuwa_mock,shuwa_req,shuwa_rest,
+                        shuwa_rest_check,shuwa_router,shuwa_swagger,
+                        shuwa_web_manager_app,shuwa_web_manager_sup,
+                        shuwa_websocket,viewer]},
+              {env,[]},
+              {mod,{shuwa_web_manager_app,[]}},
+              {registered,[shuwa_web_manager]}]}.

@@ -1,0 +1,65 @@
+%% 网站根目录
+{mapping, "web.docroot", "shuwa_web_manager.docroot", [
+  {datatype, string},
+  {default, "priv/www/"}
+]}.
+
+{mapping, "web.port", "shuwa_web_manager.port", [
+  {datatype, integer},
+  {default, 5080}
+]}.
+
+{mapping, "web.acceptors", "shuwa_web_manager.acceptors", [
+  {datatype, integer},
+  {default, 200}
+]}.
+
+{mapping, "web.sessionExpiration", "shuwa_web_manager.session_expiration", [
+  {datatype, integer},
+  {default, 1800}
+]}.
+
+{mapping, "developer.mod", "shuwa_web_manager.developer_mode", [
+  {datatype, {enum, [true, false]}},
+  {default, true}
+]}.
+
+%% 证书
+{mapping, "web.cacertfile", "shuwa_web_manager.cacertfile", [
+  {datatype, string},
+  {default, ""}
+]}.
+
+{mapping, "web.certfile", "shuwa_web_manager.certfile", [
+  {datatype, string},
+  {default, ""}
+]}.
+
+{mapping, "web.keyfile", "shuwa_web_manager.keyfile", [
+  {datatype, string},
+  {default, ""}
+]}.
+
+
+{mapping, "parse.not_delete_table.$name", "shuwa_web_manager.not_delete_table", [
+  {datatype, string}
+]}.
+
+{translation, "shuwa_web_manager.not_delete_table", fun(Conf) ->
+  Collectors = cuttlefish_variable:filter_by_prefix("parse.not_delete_table", Conf),
+  lists:map(fun({_, Collector}) -> Collector end, Collectors)
+end}.
+
+{mapping, "swagger.apps", "shuwa_web_manager.swagger_apps", [
+  {datatype, string}
+]}.
+
+{mapping, "swagger.tables", "shuwa_web_manager.swagger_tables", [
+  {datatype, string}
+]}.
+
+
+{mapping, "viewer.shapes", "shuwa_web_manager.shapes", [
+  {datatype, string},
+  {default, "shapes/"}
+]}.
