@@ -30,6 +30,8 @@
     <<"access-control-allow-methods">> => <<"GET, POST, OPTIONS, PUT, DELETE">>
 }).
 
+-define(FORWARD_HEADER, "x-forwarded-for").
+
 -define(WSOPTIONS,
     fun() ->
         {ws, Port, Options} = lists:keyfind(ws, 1, emqx:get_env(listeners, [])),
